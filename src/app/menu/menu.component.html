@@ -1,6 +1,26 @@
 <mat-toolbar color="primary">
-    <span><a mat-button routerLink="/">MUSICS</a></span>
+    <span>MUSICS
+    </span>
     <span class="spacer"></span>
-    <mat-icon class="icon">favorite</mat-icon>
-    <mat-icon class="icon">delete</mat-icon>
+    <span><a mat-button routerLink="/">Réserver</a></span>
+    <span class="spacer"></span>
+    <span>
+      <button mat-button [matMenuTriggerFor]="reservationMenu">Réservations</button>
+      <mat-menu #reservationMenu="matMenu">
+        <a mat-menu-item routerLink="/me/reservations">Mes Réservations</a>
+        <a mat-menu-item routerLink="/reservations">Toutes les réservations</a>
+      </mat-menu>
+    </span>
+    <span class="spacer"></span>
+    <span><a mat-button routerLink="/users">Utilisateurs</a></span>
+    <span class="spacer"></span>
+    <span>
+      <button mat-icon-button [matMenuTriggerFor]="loginMenu">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <mat-menu #loginMenu="matMenu">
+        <a mat-menu-item routerLink="/parameters">Paramètres</a>
+        <a mat-menu-item routerLink="/logout">Logout</a>
+      </mat-menu>
+    </span>
 </mat-toolbar>
