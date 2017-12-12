@@ -15,9 +15,12 @@ export class ReservationsComponent implements OnInit {
   }
 
   reservations: any[];
-  
+
   getMyReservations() {
     this.reservations = this.reservationService.getMyReservations();
   }
 
+  deleteReservation(id) {
+    this.reservationService.deleteReservation(id);
+  }
 }

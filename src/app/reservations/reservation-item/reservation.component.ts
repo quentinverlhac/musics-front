@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-reservation',
@@ -13,8 +13,13 @@ export class ReservationComponent implements OnInit {
   }
 
   @Input() data: any;
+  @Output() delete = new EventEmitter();
 
   ngOnInit() {
+  }
+
+  onDelete() {
+    this.delete.emit();
   }
 
 }

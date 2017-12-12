@@ -6,6 +6,7 @@ export class ReservationService {
   constructor() { }
 
   data = {
+    id: 1,
     name: 'EF110',
     beginDate: '15h00', 
     duration: '2h',
@@ -14,6 +15,10 @@ export class ReservationService {
 
   getMyReservations() {
     return [this.data]
+  }
+
+  deleteReservation(id) {
+    console.log(`reservation ${id} deleted`)
   }
 
 }
