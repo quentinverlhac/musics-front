@@ -10,11 +10,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
-
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-];
+import { ReservationsModule } from './reservations/reservations.module'
+import { AppRoutingModule } from "./app-routing.module";
 
 
 @NgModule({
@@ -24,13 +21,14 @@ const appRoutes: Routes = [
     HomeComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    ReservationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
