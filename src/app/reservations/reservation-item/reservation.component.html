@@ -1,11 +1,15 @@
 <mat-expansion-panel>
     <mat-expansion-panel-header>
     <mat-panel-title>
-        Salle EF110
+        Salle {{data.name}}
     </mat-panel-title>
     <mat-panel-description>
-        Type your name and age
+        {{"heure de début : "+data.beginDate+", durée : "+data.duration}}
     </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Salut !</p>
+    <div>
+        <p>{{data.description}}</p>
+        <span class="spacer"></span>
+        <button mat-button color="warn">Annuler</button>
+    </div>
 </mat-expansion-panel>

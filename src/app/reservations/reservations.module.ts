@@ -4,18 +4,20 @@ import { ReservationComponent } from './reservation-item/reservation.component';
 import { ReservationsComponent } from './my-reservations/reservations.component';
 import { ReservationsRoutingModule } from "./reservations-routing.module";
 import {MatExpansionModule} from '@angular/material/expansion';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import { ReservationService } from './reservation.service';
 
 @NgModule({
   imports: [
     CommonModule,
     MatExpansionModule,
-    MatFormFieldModule,
+    MatButtonModule,
     ReservationsRoutingModule,
   ],
   declarations: [
     ReservationComponent,
     ReservationsComponent
-  ]
+  ],
+  providers: [ReservationService]
 })
 export class ReservationsModule { }

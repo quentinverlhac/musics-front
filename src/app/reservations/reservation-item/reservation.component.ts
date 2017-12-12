@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-reservation',
@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    const now = new Date();
+    console.log(new Date().toString())
+  }
 
-  panelOpenState: boolean = false;
-  
+  @Input() data: any;
+
   ngOnInit() {
   }
 
