@@ -9,6 +9,8 @@ export class ReservationComponent implements OnInit {
 
   constructor() { }
 
+  panelOpenState: boolean = false;
+  
   ngOnInit() {
   }
 
