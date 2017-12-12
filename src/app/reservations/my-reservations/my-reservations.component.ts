@@ -6,7 +6,7 @@ import { ReservationService } from "../reservation.service";
   templateUrl: './reservations.component.html',
   styleUrls: ['./reservations.component.css']
 })
-export class ReservationsComponent implements OnInit {
+export class MyReservationsComponent implements OnInit {
 
   constructor(private reservationService: ReservationService) { }
 
