@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, } from '@angular/material';
+import {MatButtonModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -28,10 +28,9 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCheckboxModule,
     MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
