@@ -4,6 +4,7 @@ import {MatButtonModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -27,6 +28,7 @@ import { AppRoutingModule } from "./app-routing.module";
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
+    MatCardModule,
     ReservationsModule,
     AppRoutingModule
   ],
