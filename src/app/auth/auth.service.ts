@@ -33,6 +33,7 @@ export class AuthService {
   }
 
   callback(code, state) {
+    console.log('callback')
     const registeredState = localStorage.getItem('state');
     if (typeof code === 'undefined' || typeof state === 'undefined' || typeof registeredState === 'undefined' || state !== registeredState) {
       throw 'Login error'

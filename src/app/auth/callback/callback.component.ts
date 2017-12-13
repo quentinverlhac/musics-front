@@ -11,12 +11,19 @@ export class CallbackComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
+  code: string;
+  state: string;
+
   ngOnInit() {
-    this.route.queryParams.toPromise().then((params: Params) => {
-      this.authService.callback(params['code'], params['state'])
-    }).catch(() => {
+    this.route.queryParams.subscribe((params: Params) => {
+      this.code = params['code'];
+      this.state = params['state'];
+    });
+    this.authService.callback(this.code, this.state)
+    .then(() => this.router.navigate(['']))
+    .catch(() => {
       console.log('login error')
-    }).then(() => this.router.navigate(['']))
+    })
   }
 
 }
