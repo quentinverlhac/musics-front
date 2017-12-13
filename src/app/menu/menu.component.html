@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar *ngIf="login" color="primary">
     <span>MUSICS
     </span>
     <span class="spacer"></span>
@@ -23,4 +23,17 @@
         <a mat-menu-item routerLink="/logout">Logout</a>
       </mat-menu>
     </span>
+</mat-toolbar>
+<mat-toolbar *ngIf="!login" color="primary">
+  <span>MUSICS
+  </span>
+  <span class="spacer"></span>
+  <span>
+    <button mat-icon-button [matMenuTriggerFor]="loginMenu">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <mat-menu #loginMenu="matMenu">
+      <a mat-menu-item routerLink="/login">Login</a>
+    </mat-menu>
+  </span>
 </mat-toolbar>

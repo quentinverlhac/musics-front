@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { AuthService } from "../auth/auth.service";
 
 @Component({
   selector: 'app-menu',
@@ -10,10 +11,12 @@ import { MatMenuTrigger } from '@angular/material/menu';
 export class MenuComponent {
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
-  onHover() {
-    this.trigger.openMenu();
+  login: boolean;
+  
+  ngOnInit() {
+    this.login = this.authService.isLoggedIn();
   }
 
 }

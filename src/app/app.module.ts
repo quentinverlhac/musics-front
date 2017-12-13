@@ -13,7 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { ReservationsModule } from './reservations/reservations.module'
 import { AppRoutingModule } from "./app-routing.module";
-
+import { AuthModule } from "./auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { AppRoutingModule } from "./app-routing.module";
     MatMenuModule,
     MatCardModule,
     ReservationsModule,
+    AuthModule,
     AppRoutingModule
   ],
   providers: [],
