@@ -4,7 +4,13 @@ import { AuthRoutingModule } from "./auth-routing.module";
 import { AuthService } from "./auth.service";
 import { LoginComponent } from './login/login.component';
 import { CallbackComponent } from './callback/callback.component';
+import { Http, RequestOptions } from '@angular/http';
 import { HttpClientModule } from "@angular/common/http";
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
+
+export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+  return new AuthHttp(new AuthConfig(), http, options);
+}
 
 @NgModule({
   imports: [
@@ -12,7 +18,14 @@ import { HttpClientModule } from "@angular/common/http";
     HttpClientModule,
     AuthRoutingModule
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    {
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [Http, RequestOptions]
+    }
+  ],
   declarations: [LoginComponent, CallbackComponent]
 })
 export class AuthModule { }

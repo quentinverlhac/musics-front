@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { JwtHelper } from "angular2-jwt";
 
 import config from "../../config";
 
@@ -8,12 +9,10 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  isLoggedIn() {
-    return false;
-  }
+  jwtHelper: JwtHelper = new JwtHelper();
 
-  getToken() {
-    return "";
+  isLoggedIn() {
+    return (localStorage.getItem('expires_at')) && Date.now() < Date.parse(localStorage.getItem('expires_at'))
   }
 
   login() {
@@ -41,7 +40,8 @@ export class AuthService {
       return this.http.post(config.back.auth, {
         code
       }).toPromise().then(data => {
-        console.log('do things')
+        localStorage.setItem('token', data['access_token']);
+        localStorage.setItem('expires_at', data['expires_at']);
       })
     }
   }
