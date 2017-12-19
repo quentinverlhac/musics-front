@@ -15,11 +15,20 @@ import { ReservationsModule } from './reservations/reservations.module'
 import { AppRoutingModule } from "./app-routing.module";
 import { AuthModule } from "./auth/auth.module";
 
+
+import { SearchRoomsComponent } from './reservations/search-rooms/search-rooms.component';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {RoomService} from './reservations/shared/rooms.service';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    SearchRoomsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +40,11 @@ import { AuthModule } from "./auth/auth.module";
     MatCardModule,
     ReservationsModule,
     AuthModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [RoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
