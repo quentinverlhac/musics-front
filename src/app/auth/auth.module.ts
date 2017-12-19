@@ -7,6 +7,7 @@ import { CallbackComponent } from './callback/callback.component';
 import { Http, RequestOptions } from '@angular/http';
 import { HttpClientModule } from "@angular/common/http";
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { LogoutComponent } from '../auth/logout/logout.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig(), http, options);
@@ -26,6 +27,6 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
       deps: [Http, RequestOptions]
     }
   ],
-  declarations: [LoginComponent, CallbackComponent]
+  declarations: [LoginComponent, CallbackComponent, LogoutComponent]
 })
 export class AuthModule { }

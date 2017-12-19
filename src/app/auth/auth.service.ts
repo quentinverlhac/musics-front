@@ -12,7 +12,7 @@ export class AuthService {
   jwtHelper: JwtHelper = new JwtHelper();
 
   isLoggedIn() {
-    return (localStorage.getItem('expires_at')) && Date.now() < Date.parse(localStorage.getItem('expires_at'))
+    return localStorage.getItem('expires_at') && Date.now() < parseInt(localStorage.getItem('expires_at'))*1000
   }
 
   login() {
@@ -37,9 +37,11 @@ export class AuthService {
     if (typeof code === 'undefined' || typeof state === 'undefined' || typeof registeredState === 'undefined' || state !== registeredState) {
       throw 'Login error'
     } else {
+      console.log('back request')
       return this.http.post(config.back.auth, {
         code
       }).toPromise().then(data => {
+        console.log('back response')
         localStorage.setItem('token', data['access_token']);
         localStorage.setItem('expires_at', data['expires_at']);
       })
@@ -49,5 +51,6 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('expires_at');
+    return Promise.resolve();
   }
 }
