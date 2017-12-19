@@ -4,7 +4,7 @@ import { MyReservationsComponent } from "./my-reservations/my-reservations.compo
 import { ReservationsComponent } from "./reservations/reservations.component";
 
 const reservationsRoutes: Routes = [
-  { path: 'me/reservations', component: MyReservationsComponent },
+  { path: 'reservations/me', component: MyReservationsComponent },
   { path: 'reservations', component: ReservationsComponent }
 ]
 
