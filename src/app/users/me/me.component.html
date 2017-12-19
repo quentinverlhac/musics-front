@@ -1,0 +1,17 @@
+<mat-list>
+  <mat-list-item>
+    <mat-icon mat-list-icon>person</mat-icon>
+    <p> {{ me.fullName }}</p>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon mat-list-icon>mail</mat-icon>
+    <p>{{ me.mail }}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <h3 mat-subheader>Instruments</h3>
+  <mat-list-item *ngFor="let instrument of me.instruments">
+    <mat-icon mat-list-icon>music_note</mat-icon>
+    <p>{{ instrument.name }}</p>
+  </mat-list-item>
+ </mat-list>
+ 
