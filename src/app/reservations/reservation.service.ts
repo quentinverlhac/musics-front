@@ -17,6 +17,10 @@ export class ReservationService {
     return [this.data]
   }
 
+  getReservations() {
+    return [this.data]
+  }
+
   deleteReservation(id) {
     console.log(`reservation ${id} deleted`)
   }

@@ -1,0 +1,3 @@
+<div>
+  <app-reservation *ngFor="let reservation of reservations" [data]="reservation" (delete)="deleteReservation(reservation.id)"></app-reservation>
+</div>

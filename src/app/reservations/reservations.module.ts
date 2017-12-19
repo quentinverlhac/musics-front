@@ -6,6 +6,7 @@ import { ReservationsRoutingModule } from "./reservations-routing.module";
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import { ReservationService } from './reservation.service';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { ReservationService } from './reservation.service';
   ],
   declarations: [
     ReservationComponent,
-    MyReservationsComponent
+    MyReservationsComponent,
+    ReservationsComponent
   ],
   providers: [ReservationService]
 })
