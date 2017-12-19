@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { ReservationsModule } from './reservations/reservations.module'
+import { UsersModule } from "./users/users.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AuthModule } from "./auth/auth.module";
 
@@ -38,6 +39,7 @@ import {RoomService} from './reservations/shared/rooms.service';
     MatIconModule,
     MatMenuModule,
     MatCardModule,
+    UsersModule,
     ReservationsModule,
     AuthModule,
     AppRoutingModule,

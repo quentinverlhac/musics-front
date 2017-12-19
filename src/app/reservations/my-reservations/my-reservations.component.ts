@@ -19,8 +19,4 @@ export class MyReservationsComponent implements OnInit {
   getMyReservations() {
     this.reservations = this.reservationService.getMyReservations();
   }
-
-  deleteReservation(id) {
-    this.reservationService.deleteReservation(id);
-  }
 }
