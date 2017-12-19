@@ -5,6 +5,7 @@ export default {
         authorize: "https://auth.viarezo.fr/oauth/authorize/"
     },
     back: {
-        auth: "http://localhost:8080/auth"
+        auth: "http://localhost:8080/auth",
+        api: "http://localhost:8080"
     }
 }

@@ -11,8 +11,9 @@ export class MeComponent implements OnInit {
   constructor(private usersService: UsersService) { }
 
   me: any;
+  showInstruments: boolean = false;
   ngOnInit() {
-    this.me = this.usersService.getMe()
+    this.usersService.getMe().then(user => this.me = user)
   }
 
 }
