@@ -7,6 +7,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import { ReservationService } from './reservation.service';
 import { ReservationsComponent } from './reservations/reservations.component';
+import { SearchRoomsComponent } from "./search-rooms/search-rooms.component";
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {RoomService} from './shared/rooms.service';
 
 @NgModule({
   imports: [
@@ -14,12 +18,15 @@ import { ReservationsComponent } from './reservations/reservations.component';
     MatExpansionModule,
     MatButtonModule,
     ReservationsRoutingModule,
+    FormsModule,
+    HttpModule
   ],
   declarations: [
     ReservationComponent,
     MyReservationsComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    SearchRoomsComponent
   ],
-  providers: [ReservationService]
+  providers: [ReservationService, RoomService]
 })
 export class ReservationsModule { }

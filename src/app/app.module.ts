@@ -17,19 +17,12 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AuthModule } from "./auth/auth.module";
 
 
-import { SearchRoomsComponent } from './reservations/search-rooms/search-rooms.component';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
-import {RoomService} from './reservations/shared/rooms.service';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    HomeComponent,
-    SearchRoomsComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +35,9 @@ import {RoomService} from './reservations/shared/rooms.service';
     UsersModule,
     ReservationsModule,
     AuthModule,
-    AppRoutingModule,
-    HttpModule
+    AppRoutingModule
   ],
-  providers: [RoomService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
