@@ -14,7 +14,8 @@ export class ReservationComponent implements OnInit {
   @Output() delete = new EventEmitter();
 
   ngOnInit() {
-    this.data.beginning = new Date(this.data.beginning).toLocaleDateString();
+    this.data.date = new Date(this.data.beginning).toLocaleDateString();
+    this.data.time = new Date(this.data.beginning).toLocaleTimeString();
     this.data.duration = this.data.duration/3600;
   }
 
