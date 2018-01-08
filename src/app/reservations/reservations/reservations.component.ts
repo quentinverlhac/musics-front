@@ -15,6 +15,10 @@ export class ReservationsComponent implements OnInit {
     this.reservations = this.reservationService.getReservations();
   }
 
+  deleteReservation(reservationId) {
+    this.reservationService.deleteReservation(reservationId).subscribe(() => this.reservations = this.reservationService.getReservations())
+  }
+
   reservations: Observable<any>;
 
 }

@@ -27,7 +27,7 @@ export class ReservationService {
   }
 
   deleteReservation(id) {
-    console.log(`reservation ${id} deleted`)
+    return this.http.delete(`${config.back.api}/reservations/${id}`, { headers });
   }
 
 }
