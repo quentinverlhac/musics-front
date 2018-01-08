@@ -8,14 +8,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ReservationComponent implements OnInit {
 
   constructor() {
-    const now = new Date();
-    console.log(new Date().toString())
   }
 
   @Input() data: any;
   @Output() delete = new EventEmitter();
 
   ngOnInit() {
+    this.data.beginning = new Date(this.data.beginning).toLocaleDateString();
+    this.data.duration = this.data.duration/3600;
   }
 
   onDelete() {

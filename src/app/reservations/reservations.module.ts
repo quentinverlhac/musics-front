@@ -11,6 +11,7 @@ import { SearchRoomsComponent } from "./search-rooms/search-rooms.component";
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RoomService} from './shared/rooms.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {RoomService} from './shared/rooms.service';
     MatButtonModule,
     ReservationsRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   declarations: [
     ReservationComponent,

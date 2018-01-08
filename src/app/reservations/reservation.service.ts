@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+
+import config from "../../config";
+
+const headers = new HttpHeaders({'token': localStorage.getItem('token')});
 
 @Injectable()
 export class ReservationService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   data = {
     id: 1,
@@ -14,11 +19,11 @@ export class ReservationService {
   }
 
   getMyReservations() {
-    return [this.data]
+    return this.http.get<any[]>(`${config.back.api}/users/me/reservations`, { headers });
   }
 
   getReservations() {
-    return [this.data]
+    return this.http.get<any[]>(`${config.back.api}/reservations`, { headers });
   }
 
   deleteReservation(id) {
