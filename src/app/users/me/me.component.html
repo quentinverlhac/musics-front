@@ -1,4 +1,4 @@
-<mat-list *ngIf="me">
+<mat-list *ngIf="me$ | async as me">
   <mat-list-item>
     <mat-icon mat-list-icon>person</mat-icon>
     <p> {{ me.fullName }}</p>

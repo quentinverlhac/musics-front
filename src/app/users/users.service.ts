@@ -12,14 +12,7 @@ export class UsersService {
   me: any;
 
   getMe() {
-    if (this.me) {
-      return Promise.resolve(this.me)
-    } else {
-      return this.http.get(config.back.api+'/user/me', {headers}).toPromise().then(user => {
-        this.me = user;
-        return this.me;
-      })
-    }
+    return this.http.get(config.back.api+'/users/me', {headers});
   }
 
 }

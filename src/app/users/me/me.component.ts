@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from "../users.service";
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-me',
@@ -10,10 +11,11 @@ export class MeComponent implements OnInit {
 
   constructor(private usersService: UsersService) { }
 
-  me: any;
-  showInstruments: boolean = false;
+  me$: Observable<any>;
+
   ngOnInit() {
-    this.usersService.getMe().then(user => this.me = user)
+    this.me$ = this.usersService.getMe();
+    this.me$.subscribe(me => console.log(me));
   }
 
 }
