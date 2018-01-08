@@ -9,6 +9,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from "@angular/common/http";
+import { UserComponent } from '../users/user/user.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 @NgModule({
@@ -19,9 +22,10 @@ import { HttpClientModule } from "@angular/common/http";
     MatButtonModule,
     HttpClientModule,
     MatInputModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    MatExpansionModule
   ],
-  declarations: [UsersComponent, MeComponent],
+  declarations: [UsersComponent, MeComponent, UserComponent],
   providers: [UsersService]
 })
 export class UsersModule { }

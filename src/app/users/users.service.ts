@@ -12,7 +12,11 @@ export class UsersService {
   me: any;
 
   getMe() {
-    return this.http.get(config.back.api+'/users/me', {headers});
+    return this.http.get(`${config.back.api}/users/me`, {headers});
+  }
+
+  getUsers() {
+    return this.http.get(`${config.back.api}/users`, {headers});
   }
 
 }

@@ -1,0 +1,29 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+  <mat-panel-title>
+    <mat-icon mat-list-icon>person</mat-icon>
+    {{user.fullName}}
+  </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-list>
+    <mat-list-item>
+      <mat-icon mat-list-icon>mail</mat-icon>
+      <p>{{ user.mail }}</p>
+    </mat-list-item>
+    <mat-list-item class="phone" >
+      <mat-icon mat-list-icon>phone</mat-icon>
+      <p>{{ user.telephone }}</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Instruments</h3>
+    <mat-list-item *ngFor="let instrument of user.instruments">
+      <mat-icon mat-list-icon>music_note</mat-icon>
+      <p>{{ instrument.name }}</p>
+    </mat-list-item>
+    <mat-list-item class="phone" >
+      <button mat-icon-button color="basic">
+          <mat-icon >add</mat-icon>
+      </button>
+    </mat-list-item>
+   </mat-list>
+</mat-expansion-panel>
