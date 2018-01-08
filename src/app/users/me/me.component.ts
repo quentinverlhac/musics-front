@@ -12,10 +12,15 @@ export class MeComponent implements OnInit {
   constructor(private usersService: UsersService) { }
 
   me$: Observable<any>;
+  instruments$: Observable<any[]>;
 
   ngOnInit() {
     this.me$ = this.usersService.getMe();
-    this.me$.subscribe(me => console.log(me));
+    this.instruments$ = this.usersService.getInstruments();
+  }
+
+  onInstrumentAdd(instrumentId) {
+    this.usersService.addInstrument(instrumentId).subscribe(() => this.me$ = this.usersService.getMe())
   }
 
 }

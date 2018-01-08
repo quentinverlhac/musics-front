@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from "@angular/common/http";
 import { UserComponent } from '../users/user/user.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -23,7 +24,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     HttpClientModule,
     MatInputModule,
     UsersRoutingModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatMenuModule
   ],
   declarations: [UsersComponent, MeComponent, UserComponent],
   providers: [UsersService]

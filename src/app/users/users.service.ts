@@ -15,8 +15,16 @@ export class UsersService {
     return this.http.get(`${config.back.api}/users/me`, {headers});
   }
 
+  addInstrument(instrumentId) {
+    return this.http.post(`${config.back.api}/users/me/instruments`, { instrumentId },{ headers });
+  }
+
   getUsers() {
-    return this.http.get(`${config.back.api}/users`, {headers});
+    return this.http.get<any[]>(`${config.back.api}/users`, {headers});
+  }
+
+  getInstruments() {
+    return this.http.get<any[]>(`${config.back.api}/instruments`, {headers});
   }
 
 }

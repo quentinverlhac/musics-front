@@ -22,10 +22,13 @@
     <mat-icon mat-list-icon>music_note</mat-icon>
     <p>{{ instrument.name }}</p>
   </mat-list-item>
-  <mat-list-item class="phone" >
-    <button mat-icon-button color="basic">
+  <mat-list-item>
+    <button [matMenuTriggerFor]="instrumentMenu" mat-icon-button color="basic" >
         <mat-icon >add</mat-icon>
     </button>
+    <mat-menu #instrumentMenu="matMenu">
+      <button (click)="onInstrumentAdd(instrument.id)" mat-menu-item *ngFor="let instrument of (instruments$ | async)">{{ instrument.name }}</button>
+    </mat-menu>
   </mat-list-item>
  </mat-list>
  
