@@ -1,0 +1,112 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+          
+  
+          <div class="form-group">
+            <label for="username">Select a Month</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              ngModel
+              name="username"
+              required
+              disabled>
+          </div>
+  
+          <div class="form-group">
+            <label for="username">Select a Day</label>
+            <input
+              type="text"
+              id="username2"
+              class="form-control"
+              ngModel
+              name="username"
+              required
+              disabled>
+          </div>
+  
+          <div class="form-group">
+              <label for="secret">Select Start Hour</label>
+              <select
+                id="hour"
+                class="form-control"
+                [ngModel]="defaultHour"
+                name="hour">
+                <option *ngFor="let hour of Hours" [value]="hour">{{hour}}</option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+                <label for="secret"> Select Start Minute </label>
+                <select
+                  id="minute"
+                  class="form-control"
+                  [ngModel]="defaultMinute"
+                  name="minute">
+                  <option *ngFor="let minute of Minutes" [value]="minute">{{minute}}</option>
+                </select>
+              </div>
+                  
+              <div class="form-group">
+                <label for="secret">Select Duration</label>
+                <select
+                  id="duration"
+                  class="form-control"
+                  [ngModel]="defaultDuration"
+                  name="duration">
+                  <option *ngFor="let duration of Durations" [value]="duration">{{duration}}</option>
+                </select>
+              </div>
+  
+  
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!f.valid">Submit</button>
+        </form>
+      </div>
+    </div>
+    <hr>
+  
+  
+    <div class="row" *ngIf="submitted">
+      <div class="col-xs-12 alert alert-info" *ngIf="simulServ(); else noRooms">
+        <h3> Nous avons trouvé une salle Z pour les horaires suivantes : </h3>
+        <h4>De: {{ SD.heure}}  : {{SD.minute}} à {{ED.heure}} : {{ED.minute}}</h4>
+  
+        <button
+        class="btn btn-success"
+        type="submit"
+        (click)="onFinalSubmit()">Valider</button>   
+        
+        <button
+        class="btn btn-primary"
+        type="submit"
+        (click)="onFinalSubmit()">Nouveau Choix</button>
+    </div>
+  
+    <ng-template #noRooms>
+        <h3> Nous avons trouvé pas de salles  pour les horaires suivantes : </h3>
+        
+      <div class="alert alert-danger">
+      <button
+      class="btn btn-primary"
+      type="submit"
+      (click)="onFinalSubmit()">Nouveau Choix</button>
+      </div>
+    </ng-template>
+     
+    </div>
+  </div>
+  
+  <!--
+  <label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider round"></span>
+  </label>
+  -->
+  

@@ -16,13 +16,19 @@ import { UsersModule } from "./users/users.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AuthModule } from "./auth/auth.module";
 
+import { HeaderReservationComponent } from './reservations/search-rooms/header-reservation/header-reservation.component';
+//import { PropositionReservationComponent } from './reservations/search-rooms/proposition-reservation/proposition-reservation.component';
+import { HttpModule } from '@angular/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderReservationComponent,
+    //PropositionReservationComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,10 @@ import { AuthModule } from "./auth/auth.module";
     UsersModule,
     ReservationsModule,
     AuthModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
