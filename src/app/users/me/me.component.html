@@ -21,6 +21,9 @@
   <mat-list-item *ngFor="let instrument of me.instruments">
     <mat-icon mat-list-icon>music_note</mat-icon>
     <p>{{ instrument.name }}</p>
+    <button (click)="onInstrumentDelete(instrument.id)" mat-icon-button color="basic" >
+      <mat-icon >delete</mat-icon>
+    </button>
   </mat-list-item>
   <mat-list-item>
     <button [matMenuTriggerFor]="instrumentMenu" mat-icon-button color="basic" >

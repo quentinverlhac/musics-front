@@ -19,6 +19,10 @@ export class UsersService {
     return this.http.post(`${config.back.api}/users/me/instruments`, { instrumentId },{ headers });
   }
 
+  deleteInstrument(instrumentId) {
+    return this.http.request('delete', `${config.back.api}/users/me/instruments`, { headers, body: { instrumentId } });
+  }
+
   getUsers() {
     return this.http.get<any[]>(`${config.back.api}/users`, {headers});
   }

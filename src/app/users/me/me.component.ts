@@ -20,7 +20,11 @@ export class MeComponent implements OnInit {
   }
 
   onInstrumentAdd(instrumentId) {
-    this.usersService.addInstrument(instrumentId).subscribe(() => this.me$ = this.usersService.getMe())
+    this.usersService.addInstrument(instrumentId).subscribe(() => this.me$ = this.usersService.getMe());
+  }
+
+  onInstrumentDelete(instrumentId) {
+    this.usersService.deleteInstrument(instrumentId).subscribe(() => this.me$ = this.usersService.getMe());
   }
 
 }
