@@ -22,7 +22,7 @@
       <mat-checkbox [(ngModel)]="isAdmin">admin</mat-checkbox>
     </mat-list-item>
     <mat-list-item *ngIf="admin && (isAdmin != user.admin || isSubscriber != user.adherent)">
-      <button type="button" (click)="updateUserRights()" mat-icon-button color="basic" >Appliquer</button>
+      <button (click)="updateUserRights()" mat-button color="primary" >Appliquer</button>
     </mat-list-item>
     <mat-divider></mat-divider>
     <h3 mat-subheader>Instruments</h3>
