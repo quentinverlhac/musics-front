@@ -9,21 +9,26 @@
   </mat-list-item>
   <mat-list-item class="phone" >
     <mat-icon mat-list-icon>phone</mat-icon>
-    <p>{{ me.telephone }}</p>
-    <span class="spacer"></span>
-    <button mat-icon-button color="basic">
-        <mat-icon >edit</mat-icon>
-    </button>
-    <span class="spacer"></span>
+    <form class="phone-form">
+      <mat-form-field>
+        <input type="tel" matInput [(ngModel)]="me.telephone" name="telephone">
+      </mat-form-field>
+      <button type="button" (click)="onPhoneUpdate(me.telephone)" mat-icon-button color="basic" >
+          <mat-icon matSuffix>mode_edit</mat-icon>
+      </button>
+    </form>
   </mat-list-item>
+    <span class="spacer"></span>
   <mat-divider></mat-divider>
   <h3 mat-subheader>Instruments</h3>
   <mat-list-item *ngFor="let instrument of me.instruments">
     <mat-icon mat-list-icon>music_note</mat-icon>
     <p>{{ instrument.name }}</p>
+    <span class="spacer"></span>
     <button (click)="onInstrumentDelete(instrument.id)" mat-icon-button color="basic" >
       <mat-icon >delete</mat-icon>
     </button>
+    <span class="spacer"></span>
   </mat-list-item>
   <mat-list-item>
     <button [matMenuTriggerFor]="instrumentMenu" mat-icon-button color="basic" >

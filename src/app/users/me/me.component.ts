@@ -27,4 +27,8 @@ export class MeComponent implements OnInit {
     this.usersService.deleteInstrument(instrumentId).subscribe(() => this.me$ = this.usersService.getMe());
   }
 
+  onPhoneUpdate(telephone) {
+    this.me$ = this.usersService.updatePhone(telephone);
+  }
+
 }
