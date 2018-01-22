@@ -15,6 +15,16 @@
       <p>{{ user.telephone }}</p>
     </mat-list-item>
     <mat-divider></mat-divider>
+    <mat-list-item *ngIf="admin">
+      <mat-checkbox [(ngModel)]="isSubscriber">adherent</mat-checkbox>
+    </mat-list-item>
+    <mat-list-item *ngIf="admin">
+      <mat-checkbox [(ngModel)]="isAdmin">admin</mat-checkbox>
+    </mat-list-item>
+    <mat-list-item *ngIf="admin && (isAdmin != user.admin || isSubscriber != user.adherent)">
+      <button type="button" (click)="updateUserRights()" mat-icon-button color="basic" >Appliquer</button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
     <h3 mat-subheader>Instruments</h3>
     <mat-list-item *ngFor="let instrument of user.instruments">
       <mat-icon mat-list-icon>music_note</mat-icon>

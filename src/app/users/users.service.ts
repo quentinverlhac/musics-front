@@ -15,6 +15,10 @@ export class UsersService {
     return this.http.get(`${config.back.api}/users/me`, {headers});
   }
 
+  updateUserRights(login, isAdmin, isSubscriber) {
+    return this.http.put(`${config.back.api}/users/${login}`, {admin: isAdmin, adherent: isSubscriber},{headers})
+  }
+
   addInstrument(instrumentId) {
     return this.http.post(`${config.back.api}/users/me/instruments`, { instrumentId },{ headers });
   }
@@ -28,7 +32,10 @@ export class UsersService {
   }
 
   getInstruments() {
-    return this.http.get<any[]>(`${config.back.api}/instruments`, {headers});
+    return this.http.get<any[]>(`${config.back.api}/instruments`, { headers });
   }
 
+  updatePhone(telephone) {
+    return this.http.put(`${config.back.api}/users/me`, { telephone },  { headers });
+  }
 }

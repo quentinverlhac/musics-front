@@ -12,9 +12,11 @@ export class UsersComponent implements OnInit {
   constructor(private usersService: UsersService) { }
 
   users$: Observable<any[]>;
+  me$: Observable<any>;
 
   ngOnInit() {
     this.users$ = this.usersService.getUsers();
+    this.me$ = this.usersService.getMe();
   }
 
 }

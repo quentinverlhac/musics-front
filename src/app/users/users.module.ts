@@ -12,6 +12,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { UserComponent } from '../users/user/user.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatMenuModule} from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -25,7 +27,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatInputModule,
     UsersRoutingModule,
     MatExpansionModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule,
+    MatCheckboxModule
   ],
   declarations: [UsersComponent, MeComponent, UserComponent],
   providers: [UsersService]
