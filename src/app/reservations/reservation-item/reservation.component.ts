@@ -11,6 +11,7 @@ export class ReservationComponent implements OnInit {
   }
 
   @Input() data: any;
+  @Input() admin: boolean;
   @Output() delete = new EventEmitter();
 
   ngOnInit() {

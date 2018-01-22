@@ -16,6 +16,6 @@
     <div>
         <p>{{data.description}}</p>
         <span class="spacer"></span>
-        <button mat-button color="warn" (click)="onDelete()">Annuler</button>
+        <button *ngIf="admin" mat-button color="warn" (click)="onDelete()">Annuler</button>
     </div>
 </mat-expansion-panel>

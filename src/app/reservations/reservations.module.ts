@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RoomService} from './shared/rooms.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersService } from "../users/users.service";
 
 @NgModule({
   imports: [
@@ -29,6 +30,6 @@ import { HttpClientModule } from '@angular/common/http';
     ReservationsComponent,
     SearchRoomsComponent
   ],
-  providers: [ReservationService, RoomService]
+  providers: [ReservationService, RoomService, UsersService]
 })
 export class ReservationsModule { }
