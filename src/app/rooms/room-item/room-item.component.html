@@ -1,0 +1,18 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+  <mat-panel-title>
+      Salle {{room.number}}
+  </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-list>
+    <mat-list-item>{{room.capacity}}</mat-list-item>
+    <mat-list-item>{{room.purpose}}</mat-list-item>
+    <mat-list-item>{{room.capacity}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Instruments</h3>
+    <mat-list-item *ngFor="let instrument of room.instruments">
+      <mat-icon mat-list-icon>music_note</mat-icon>
+      <p>{{ instrument.name }}</p>
+    </mat-list-item>
+  </mat-list>
+</mat-expansion-panel>

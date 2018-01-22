@@ -15,6 +15,7 @@ import { ReservationsModule } from './reservations/reservations.module'
 import { UsersModule } from "./users/users.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AuthModule } from "./auth/auth.module";
+import { RoomsModule } from "./rooms/rooms.module";
 
 import { HeaderReservationComponent } from './reservations/search-rooms/header-reservation/header-reservation.component';
 //import { PropositionReservationComponent } from './reservations/search-rooms/proposition-reservation/proposition-reservation.component';
@@ -41,6 +42,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     UsersModule,
     ReservationsModule,
     AuthModule,
+    RoomsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

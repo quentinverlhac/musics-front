@@ -1,0 +1,3 @@
+<div *ngIf="me$ | async as me">
+  <app-room-item *ngFor="let room of rooms$ | async" [room]="room" [admin]="me.admin"></app-room-item>
+</div>
