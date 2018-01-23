@@ -13,8 +13,10 @@ export class RoomItemComponent implements OnInit {
   @Input() room: any;
   @Input() admin: boolean;
   @Input() instruments: any[];
+  @Input() reservation: boolean;
   @Output() delete = new EventEmitter<Number>();
   @Output() add = new EventEmitter<Number>();
+  @Output() reserve = new EventEmitter();
 
 
   ngOnInit() {
@@ -26,6 +28,10 @@ export class RoomItemComponent implements OnInit {
 
   onInstrumentDelete(instrumentId) {
     this.delete.emit(instrumentId)
+  }
+
+  onReservation() {
+    this.reserve.emit()
   }
 
 }

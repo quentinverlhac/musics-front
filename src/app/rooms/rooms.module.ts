@@ -23,6 +23,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatMenuModule
   ],
+  exports: [RoomItemComponent],
   declarations: [RoomsComponent, RoomItemComponent],
   providers: [RoomService, UsersService]
 })

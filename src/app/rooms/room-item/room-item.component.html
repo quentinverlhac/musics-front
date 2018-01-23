@@ -25,5 +25,8 @@
         <button (click)="onInstrumentAdd(instrument.id)" mat-menu-item *ngFor="let instrument of instruments">{{ instrument.name }}</button>
       </mat-menu>
     </mat-list-item>
+    <mat-list-item *ngIf="reservation">
+      <button (click)="onReservation()" mat-menu-item>Réserver</button>
+    </mat-list-item>
   </mat-list>
 </mat-expansion-panel>

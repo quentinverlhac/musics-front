@@ -30,4 +30,12 @@ export class ReservationService {
     return this.http.delete(`${config.back.api}/reservations/${id}`, { headers });
   }
 
+  searchRooms(beginning, end) {
+    return this.http.post<any[]>(`${config.back.api}/rooms/availables`, {beginning, end} ,{ headers });
+  }
+
+  getRoom(roomId, beginning, end) {
+    return this.http.post(`${config.back.api}/reservations/`, {roomId, beginning, end} ,{ headers });
+  }
+
 }
