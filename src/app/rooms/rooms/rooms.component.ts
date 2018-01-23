@@ -14,11 +14,24 @@ export class RoomsComponent implements OnInit {
 
   rooms$: Observable<any[]>;
   me$: Observable<any>;
+  instruments$: Observable<any[]>;
 
   ngOnInit() {
     this.rooms$ = this.roomService.getRooms();
     this.me$ = this.usersService.getMe();
+    this.instruments$ = this.roomService.getInstruments();
 
   }
+
+  onInstrumentAdd(instrumentId, roomId) {
+    this.roomService.addRoomInstrument(roomId, instrumentId).subscribe(() => this.me$ = this.usersService.getMe());
+
+  }
+
+  onInstrumentDelete(instrumentId, roomId) {
+    this.roomService.deleteRoomInstrument(roomId, instrumentId).subscribe(() => this.me$ = this.usersService.getMe());
+
+  }
+  
 
 }

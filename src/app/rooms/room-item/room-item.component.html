@@ -5,14 +5,25 @@
   </mat-panel-title>
   </mat-expansion-panel-header>
   <mat-list>
-    <mat-list-item>{{room.capacity}}</mat-list-item>
+    <mat-list-item>Capacité {{room.capacity}}</mat-list-item>
     <mat-list-item>{{room.purpose}}</mat-list-item>
-    <mat-list-item>{{room.capacity}}</mat-list-item>
+    <mat-list-item *ngIf="room.restricted">Salle à accès restreint</mat-list-item>
     <mat-divider></mat-divider>
     <h3 mat-subheader>Instruments</h3>
     <mat-list-item *ngFor="let instrument of room.instruments">
       <mat-icon mat-list-icon>music_note</mat-icon>
       <p>{{ instrument.name }}</p>
+      <button *ngIf="admin" (click)="onInstrumentDelete(instrument.id)" mat-icon-button color="basic" >
+        <mat-icon >delete</mat-icon>
+      </button>
+    </mat-list-item>
+    <mat-list-item *ngIf="admin">
+      <button [matMenuTriggerFor]="instrumentMenu" mat-icon-button color="basic" >
+          <mat-icon >add</mat-icon>
+      </button>
+      <mat-menu #instrumentMenu="matMenu">
+        <button (click)="onInstrumentAdd(instrument.id)" mat-menu-item *ngFor="let instrument of instruments">{{ instrument.name }}</button>
+      </mat-menu>
     </mat-list-item>
   </mat-list>
 </mat-expansion-panel>

@@ -1,3 +1,5 @@
-<div *ngIf="me$ | async as me">
-  <app-room-item *ngFor="let room of rooms$ | async" [room]="room" [admin]="me.admin"></app-room-item>
+<div *ngIf="(me$ | async); let me">
+  <div *ngIf="(instruments$ | async) ; let instruments">
+      <app-room-item *ngFor="let room of rooms$ | async" [room]="room" [admin]="me.admin" [instruments]="instruments" (add)="onInstrumentAdd($event, room.id)" (delete)="onInstrumentDelete($event, room.id)" ></app-room-item>
+  </div>
 </div>

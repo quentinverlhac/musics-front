@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoomsRoutingModule } from "./rooms-routing.module";
 import { UsersService } from "../users/users.service";
 import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatListModule,
     HttpClientModule,
     RoomsRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   declarations: [RoomsComponent, RoomItemComponent],
   providers: [RoomService, UsersService]
