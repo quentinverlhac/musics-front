@@ -1,15 +1,18 @@
+<h4 class="titre">Réserver une salle !</h4>
 <form (ngSubmit)="onSubmit()">
   <mat-form-field>
       <input matInput [matDatepicker]="picker" placeholder="Choisir une date" [(ngModel)]="search.date" name="date">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
+  </mat-form-field>
+  <mat-form-field>
       <input matInput placeholder="Début" type="time" [(ngModel)]="search.beginning" name="beginning">
     </mat-form-field>
-    <mat-form-field>
+  <mat-form-field>
       <input matInput placeholder="Fin" type="time" [(ngModel)]="search.end" name="end">
-    </mat-form-field>
+  </mat-form-field>
+  <div>
     <button type="submit" mat-button>Rechercher</button>
+  </div>
 </form>
 <app-room-item *ngFor="let room of rooms$ | async" [room]="room" [admin]="false" (reserve)="onReservation(room.id)" [reservation]="true"></app-room-item>
