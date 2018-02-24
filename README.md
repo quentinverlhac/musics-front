@@ -1,4 +1,8 @@
-# Front
+# Front End of MUSICS reservation website
+
+This is the front end of the reservation website for MUSICS. It works with the back end found in musics-back repository.
+
+The purpose of the website is to manage the reservation of music rooms for the association MUSICS at CentraleSupélec. It was made by Remi Calixte and Quentin Verlhac in winter 2017
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
 
